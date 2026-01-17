@@ -2,13 +2,14 @@
 set -e
 
 # Path to the base model
-MODEL_PATH="/mnt/data/oniond/models/Qwen3-4B"
+MODEL_PATH="/mnt/data/oniond/models/Qwen2.5-3B"
+PROJECT_NAME="gsm8k_grpo"
 
 # Stability & WandB Configuration
 export WANDB_MODE=online
 export WANDB_START_METHOD=thread
 export WANDB_PROJECT="gsm8k_grpo"
-export WANDB_NAME="qwen3_4b_gsm8k_v1"
+export WANDB_NAME="qwen25_3b_gsm8k"
 export COMPLETION_LOG_PATH="logs/completion_gsm8k_train.log"
 export RAY_IGNORE_UNHANDLED_ERRORS=1
 
