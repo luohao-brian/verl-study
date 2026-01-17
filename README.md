@@ -4,21 +4,18 @@
 
 ## 1. 核心安装流程
 
-> 详细环境配置请参考 [docs/INSTALLATION.md](docs/INSTALLATION.md)
+> 详细环境配置请参考 [docs/INSTALLATION.md](docs/INSTALLATION.md)。本项目强制锁定核心包版本（**torch==2.8.0**, **vllm==0.11.0**, **flash-attn==2.8.1**）以确保 A100 环境下的稳定性。
 
-1.  **环境准备**:
+1.  **环境同步**:
     ```bash
     # 推荐使用 uv 管理依赖
-    pip install uv
-    uv venv .venv --python 3.12
-    source .venv/bin/activate
+    uv sync
     ```
 
-2.  **安装依赖**:
+2.  **手动修复编译 (关键步)**:
+    由于 FlashAttention 与 PyTorch 存在敏感的二进制依赖，必须禁用构建隔离进行原地编译：
     ```bash
-    # 安装 PyTorch, vLLM, FlashAttention 等核心库
-    uv pip install -e .
-    pip3 install vllm==0.6.3 flash-attn --no-build-isolation
+    uv pip install --no-build-isolation --force-reinstall "flash-attn==2.8.1" "torch==2.8.0"
     ```
 
 3.  **数据准备**:
