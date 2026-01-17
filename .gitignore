@@ -1,0 +1,73 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Environment
+.venv/
+.env
+.venv_docker/
+
+# uv
+uv.lock
+.python-version
+
+# Logs & Outputs
+logs/
+outputs/
+debug_logs/
+tensorboard_log/
+*.log
+
+# Artifacts & Checkpoints (Large Files)
+artifacts/checkpoints/**
+artifacts/data/**/*.parquet
+artifacts/results/**/*.csv
+*.pt
+*.safetensors
+*.bin
+
+# Cache
+.cache/
+.ray/
+
+# Weights & Biases
+wandb/
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# System
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
